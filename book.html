@@ -298,12 +298,31 @@
   <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
   <!-- nice select -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+ 
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Kakao Map -->
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d2107365592a5a96727f97912b5eca2e">
   </script>
-  <!-- End Google Map -->
+	  <script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(35.8019102668558, 128.50859103966468),
+			level: 3
+		};
+
+	var map = new kakao.maps.Map(container, options);
+		  // 지도를 클릭한 위치에 표출할 마커입니다
+	var marker = new kakao.maps.Marker({ 
+	// 지도 중심좌표에 마커를 생성합니다 
+	position: map.getCenter() 
+	}); 
+	// 지도에 마커를 표시합니다
+	marker.setMap(map);
+   
+    	</script>
+  <!-- End Kakao Map -->
+
 
 </body>
 
